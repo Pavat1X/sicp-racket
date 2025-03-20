@@ -56,3 +56,11 @@
 
 ;;Consider the problem of representing 1 dollar with dimes, nickels, 
 ;;half-dollars, quaters, and pennies.
+
+;;this is a permutation problem where the total ways to represent value a with n coins is:
+;;the number of ways to represent value a with the first type of coin 
+;;plus the number of ways to represent value a - d with n coins, where
+;;d is the value a denominated in the first type.
+
+;;Moreover, if the value is negative, there is no representation so number of ways 
+;;should be 0. If the value is 0, there should be 1 way, which is none.

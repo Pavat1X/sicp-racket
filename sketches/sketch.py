@@ -41,3 +41,34 @@ print(fibIter(10))
 print(fib(10))
 print(fibCache(10))
 print(fibAlt(10))
+
+
+def firstDenomWays(types: int) -> int:
+    #first type is the smallest of the bunch, which depends on how many types of coins there are
+    if types > 5:
+        raise Exception("type system only accommodates up to 5")
+    else: 
+        if types == 1:
+            return 1
+        elif types == 2:
+            return 5
+        elif types == 3:
+            return 10
+        elif types == 4:
+            return 25
+        elif types == 5:
+            return 50
+
+def cc(amount: int, types: int) -> int:
+    if amount == 0:
+        return 1
+    elif (amount < 0) or (types == 0):
+        return 0
+    else:
+        return cc(amount, types - 1) + cc(amount - firstDenomWays(types), types)
+
+#ways to count change with a 5 types of coin system
+def countChange(amount):
+    return cc(amount, 5)
+
+print(countChange(100))
