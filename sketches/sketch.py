@@ -25,6 +25,19 @@ def fibIter(n):
     ans.pop(1)
     return ans[n-1]
 
+
+#another way to implement iterative fib
+
+def fibIterAlt(a: int, b: int, count: int) -> int:
+    if count == 0:
+        return b
+    else:
+        return fibIterAlt(a + b, a, count - 1)
+
+def fibAlt(n:int) -> int:
+    return fibIterAlt(1, 0, n)        
+
 print(fibIter(10))
 print(fib(10))
 print(fibCache(10))
+print(fibAlt(10))

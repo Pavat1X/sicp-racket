@@ -17,3 +17,42 @@
 ;;because of its tree-like structure, we can see that
 ;;this recursive iteration of the fibonacci sequence is of the 
 ;;time complexity O(2^n). 
+
+;;the complexity is O(2^n) because the recursive tree 
+;;generated from fib is pretty much a binary tree
+;;as any fib(n) can be broken down into fib(1)s and fib(0)s
+;;the branches of fib(1) and fib(0) grow with n in an exponential way
+
+;;mathematically, fib(n) can be approximated by the golden ratio to
+;;the power of n divided by sqrt(5)
+
+;;alternatively, we can formulate an iterative process for fib
+;;by initializing with fib(1) and fib(0) as the starting point
+;;and go from there to calculate the next number in the sequence
+
+;;in the case of SICP, we abstract fib 1 and 0 as a, b and apply 
+;;the transformations:
+;;a <- a + b
+;;b < - a
+
+(define (fib-iter a b count)
+      (if (= count 0)
+      b
+      (fib-iter (+ a b) a (- count 1))))
+
+(define (fibTwo n)
+      (fib-iter 1 0 n))
+
+(fibTwo 10)
+
+;;for such an implementation, the iterative process only has the time complexity
+;;of O(n), as the program runs linearly by the number n supplied.
+;;looking at it from another implementation
+
+;;RECURSIVE VS ITERATIVE PROCESS IMPLEMENTATIONS
+
+;;It might be straightforward to implement algorithms for both processes for the fibonacci,
+;;but what about trickier cases?
+
+;;Consider the problem of representing 1 dollar with dimes, nickels, 
+;;half-dollars, quaters, and pennies.
