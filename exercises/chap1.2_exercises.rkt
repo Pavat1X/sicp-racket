@@ -48,3 +48,29 @@
 ;;f(n) = A(0, n) = 2n
 ;;g(n) = A(1, n) = 2^n
 ;;h(n) = A(2, n) = 
+
+
+;;Exercise 1.11
+
+(define (f n)
+    (if (< n 3)
+        n
+        (+ (f (- n 1))
+           (* 2 (f (- n 2)))
+           (* 3 (f (- n 3))))))
+
+(f 10)
+
+
+;;exercise 1.12
+
+(define (tri n)
+    (if (= n 0)
+        1
+        (+ (expt 2 n) (tri (- n 1)))))
+
+;;So funny how I couldn't think of this - basically, I can just instantiate
+;;the first recursion with the exponential term 2^n and then add it to 
+;;the function itself to start the recursion process from there!!W
+
+(tri 3)
