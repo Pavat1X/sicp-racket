@@ -71,6 +71,10 @@
 
 ;;So funny how I couldn't think of this - basically, I can just instantiate
 ;;the first recursion with the exponential term 2^n and then add it to 
-;;the function itself to start the recursion process from there!!W
+;;the function itself to start the recursion process from there!!
+
+;;What I have realized here is that I can try to write out the algorithm
+;;on paper as a sequence, and then substitute the terms as functions
+;;then I can just collapse them into a recursion
 
 (tri 3)
