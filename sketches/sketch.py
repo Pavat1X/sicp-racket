@@ -1,3 +1,7 @@
+#this is my sketchbook in Python to understand how the algorithms in the book work
+
+
+
 def fib(n):
     if n < 2:
         return n
